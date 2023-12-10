@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Корзина</title>
+    <link rel="stylesheet" href="Style_shopping_card.css" />
+    <script src="C:\Users\eprin\OneDrive\Рабочий стол\какая-то папка\ркчир\jquery-3.7.1.min.js">
+    </script>
+    <script src="https://kit.fontawesome.com/d3f3a63e5f.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <aside style="float: right">
+            <a id="back_to_main" href="main_page.html">На главную</a>
+        </aside>
+        <img id="logo" src="header-logo.png" alt="Логотип" width="200" />
+    </header>
+    <main>
+        <!--<div class="empty_shop_cart">
+            <p class="empty_shop_cart_text">Ваша корзина пуста</p>
+            <button class="to_shop_btn"onclick="window.location.href='main_page.html';">
+                Перейти к покупкам
+            </button>
+        </div>-->
+        <section class="goods">
+            <div class="goods_item">
+                <img class="goods_img" src="ice-cream-toppings vanila.png" />
+                <div class="info_box">
+                    <div class="upper_info_box">
+                        <p class="goods_name">Ванильное мороженное</p>
+                        <p class="goods_volume">200 g</p>
+                    </div>
+                    <div class="lower_info_box">
+                        <p class="goods_coast goods_coast_0">150 Р</p>
+                        <div class="regulate_box">
+                            <i class="fa-solid fa-minus minus_btn minus_btn_0"></i>
+                            <p class="goods_quantity goods_quantity_0">0</p>
+                            <i class="fa-solid fa-plus plus_btn plus_btn_0"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="goods_item">
+                <img class="goods_img" src="ice-cream-toppings-chocolate.png" />
+                <div class="info_box">
+                    <div class="upper_info_box">
+                        <p class="goods_name">Шоколадное мороженное</p>
+                        <p class="goods_volume">200 g</p>
+                    </div>
+                    <div class="lower_info_box">
+                        <p class="goods_coast goods_coast_1">250 Р</p>
+                        <div class="regulate_box">
+                            <i class="fa-solid fa-minus minus_btn minus_btn_1" value="12"></i>
+                            <p class="goods_quantity goods_quantity_1">0</p>
+                            <i class="fa-solid fa-plus plus_btn plus_btn_1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="goods_item">
+                <img class="goods_img" src="ice-cream-toppings-pistacchio.png" />
+                <div class="info_box">
+                    <div class="upper_info_box">
+                        <p class="goods_name">Фисташковое мороженное</p>
+                        <p class="goods_volume">200 g</p>
+                    </div>
+                    <div class="lower_info_box">
+                        <p class="goods_coast goods_coast_2">300 Р</p>
+                        <div class="regulate_box">
+                            <i class="fa-solid fa-minus minus_btn minus_btn_2"></i>
+                            <p class="goods_quantity goods_quantity_2">0</p>
+                            <i class="fa-solid fa-plus plus_btn plus_btn_2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="goods_item">
+                <img class="goods_img" src="ice-cream-toppings-strawberry.png" />
+                <div class="info_box">
+                    <div class="upper_info_box">
+                        <p class="goods_name">Клубничное мороженное</p>
+                        <p class="goods_volume">200 g</p>
+                    </div>
+                    <div class="lower_info_box">
+                        <p class="goods_coast goods_coast_3">200 Р</p>
+                        <div class="regulate_box">
+                            <i class="fa-solid fa-minus minus_btn minus_btn_3"></i>
+                            <p class="goods_quantity goods_quantity_3">0</p>
+                            <i class="fa-solid fa-plus plus_btn plus_btn_3"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="total">
+            <div class="total_box">
+                <p class="total_price">Сумма заказа:</p>
+                <p class="total_price_value">0 P</p>
+            </div>
+            <button class="to_payment_btn" onclick="window.location.href='payment_page.html';">
+                Оформить заказ
+            </button>
+        </section>
+    </main>
+    <script src="Script_shopping_cart.js"></script>
+</body>
+</html>

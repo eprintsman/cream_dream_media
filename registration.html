@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="Style_registration.css" />
+    <script src="C:\Users\eprin\OneDrive\Рабочий стол\какая-то папка\ркчир\jquery-3.7.1.min.js">
+    </script>
+    <script src="https://kit.fontawesome.com/d3f3a63e5f.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <aside style="float: right">
+            <a id="back_to_main" href="main_page.html">На главную</a>
+        </aside>
+        <img id="logo" src="header-logo.png" alt="Логотип" width="200" />
+    </header>
+    <main>
+        <div class="box">
+            <form class="register-form">
+                <h3>Регистрация</h3>
+                <input type="text" placeholder="Логин" />
+                <input type="password" placeholder="Пароль" />
+                <input type="text" placeholder="Почта" />
+                <!--<i id="captcha" class="fa-regular fa-rotate-reverse"></i>-->
+                <div class="captcha_box">
+                    <p class="captcha_text"></p>
+                    <i id="captcha_icon" class="fa-solid fa-rotate"></i>
+                    <input type="text" name="captcha" class="captcha_input" maxlength="5" size="4" tabindex=3 />
+                </div>
+                <input type="submit" name="submit" value="Создать" class="submit" tabindex=5>
+
+                <!--<button class="register_btn">Создать</button>-->
+                <p class="message">Есть аккаунт? <a>Вход</a></p>
+            </form>
+            <form class="login-form">
+                <h3>Вход в аккаунт</h3>
+                <input type="text" placeholder="Логин" />
+                <input type="password" placeholder="Пароль" />
+                <button>Войти</button>
+                <p class="message">Нет аккаунта?<a>Загеристрируйтесь</a></p>
+            </form>
+        </div>
+    </main>
+    <script>
+        const arr = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var rString = captchaGeneration(arr);
+        $(".captcha_text").text(rString);
+
+        var loginFormOn = true;
+        $('.message a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+            if (loginFormOn == true) {
+                $('.box').height(450);
+                loginFormOn = false;
+            }
+            else {
+                $('.box').height(350);
+                loginFormOn = true;
+            }
+        });
+
+        function captchaGeneration(chars) {
+            var result = '';
+            for (var i = 0; i < 5; ++i) result += chars[Math.floor(Math.random() * chars.length)];
+            return result;
+        }
+
+        $('#captcha_icon').click(function () {
+            var rString = captchaGeneration(arr);
+            
+            $(".captcha_input").text('');
+            $(".captcha_text").text(rString);
+        });
+        
+        $('.register-form').submit(function () {
+            var captchaVal = $(".captcha_text").text();
+            var captchaCode = $(".captcha_input").val();
+
+            if (captchaVal == captchaCode) {
+                
+                $(".captcha_input").css({
+                    "color": "#609D29"
+                });
+                $("form").css("display", "none");
+                $(".box").append("<h2 style='color: lightcoral'>Вы зарегистрированы!</h2>");
+
+                return false;
+            }
+            else {
+                $(".captcha_input").css({
+                    "color": "#CE3B46"
+                });
+                console.log('captchaVal=', captchaVal);
+                console.log('captchaCode=', captchaCode);
+                var rString = captchaGeneration(arr);
+                $(".captcha_text").text(rString);
+                return false;
+            }
+
+        });
+    </script>   
+</body>
+</html>

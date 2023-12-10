@@ -1,0 +1,102 @@
+﻿/** {
+    border: 1px solid red;
+}*/
+*::selection { /*псевдоэлемент управляет стилем текста, который пользователь выделяет при помощи мыши*/
+    color: yellow;
+    background: lightcoral;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Ostrovsky";
+    background: linear-gradient(pink 10%, lightcoral);
+    /*height: 100vh;*/
+    height: auto;
+}
+
+header {
+    background-color: pink;
+    position: sticky;
+    top: 0px;
+    height: 10vw;
+    max-height: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    margin: 20px;
+    /*align-content: center;*/
+    width: 40%;
+    max-width: 400px;
+}
+
+a {
+    text-decoration: none; /*ссылки не подчёркиваются*/
+    color: lightcoral;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+    a:visited { /*отображение посещённых ссылок*/
+        text-decoration: none; /*нажатые ссылки не изменяют цвет*/
+    }
+
+    a:hover { /* отображение наведения на ссылку*/
+        color: white;
+    }
+
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#map, #shops_list {
+    /*display: flex-row;*/
+    margin: 20px;
+    color:white;
+}
+#shops_list {
+    background: rgba(255,255,255,0.13);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    width: auto;
+    height: auto;
+}
+
+iframe {
+    height: calc(90vh - 40px);
+    width: calc(70vw - 40px);
+}
+
+#shops_list_title {
+    padding-bottom: 20px;
+}
+
+#shop1, #shop2, #shop3 {
+    padding: 10px 0px 10px 0px;
+    box-sizing: border-box;
+    border-bottom: 3px solid pink;
+}
+
+.shop_work_time {
+    color: lightcoral;
+}
+
+@media (max-width: 700px) {
+    main {
+        flex-flow: column;
+        align-items: center;
+    }
+
+    iframe {
+        height: 90vh;
+        width: 90vw;
+    }
+}
