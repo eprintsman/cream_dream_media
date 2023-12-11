@@ -1,0 +1,139 @@
+﻿/** {
+    border: 1px solid red;
+}*/
+
+*::selection { /*псевдоэлемент управляет стилем текста, который пользователь выделяет при помощи мыши*/
+    color: yellow;
+    background: lightcoral;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Ostrovsky";
+    background: linear-gradient(pink 10%, lightcoral);
+    height: 100vh;
+    min-height: 700px;
+}
+
+header {
+
+    background-color: pink;
+    position: sticky;
+    top: 0px;
+    height: 10vw;
+    max-height: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    margin: 20px;
+    width: 40%;
+    max-width: 400px;
+}
+
+a {
+    text-decoration: none; /*ссылки не подчёркиваются*/
+    color: lightcoral;
+    margin-left: 50px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+    a:visited { /*отображение посещённых ссылок*/
+        text-decoration: none; /*нажатые ссылки не изменяют цвет*/
+    }
+    a:hover{
+        color:white;
+    }
+
+main {
+    
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    
+    max-width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.13);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    text-align: center;
+}
+.register-form {
+    display:none;
+}
+form * {
+    color: #7d3333;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+    form a{
+        color:white;
+    }
+    form a:hover{
+        color:lightcoral;
+    }
+::-webkit-input-placeholder { /* Chrome */
+    color: #7d3333;
+}
+form input {
+    outline: 0;
+    width: 80%;
+    /*border: 1px solid white;*/
+    border-radius: 1rem;
+    background-color:rgb(255 255 255 / 0.2);
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-size: 16px;
+}
+.captcha_input {
+    width: 40%;
+}
+.captcha_text {
+    padding:0 10px;
+    width: 60px;
+    display: inline-block;
+}
+#captcha_icon{
+    padding:0 5px;
+    cursor: pointer;
+}
+
+form button, .submit {
+    text-transform: uppercase;
+    outline: 0;
+    background: lightcoral;
+    width: 50%;
+    border: 0;
+    border-radius: 1rem;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    /*-webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;*/
+    cursor: pointer;
+}
+    form button:hover, form button:active, form button:focus, .submit:hover, .submit:active, .submit:focus {
+        background: #ed8d90;
+    }
+form h3 {
+    font-size: 26px;
+    line-height: 42px;
+    text-align: center;
+}
+form p{
+    padding: 5px 0;
+}
+
+

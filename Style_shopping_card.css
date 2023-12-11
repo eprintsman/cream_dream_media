@@ -1,0 +1,186 @@
+﻿::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: pink;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lightcoral;
+    border-radius: 10px;
+}
+
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Ostrovsky";
+    background: linear-gradient(pink 10%, #f28a8c);
+    height: 100vh;
+    min-height: 700px;
+    color: #7d3333;
+}
+
+header {
+    background-color: pink;
+    position: sticky;
+    top: 0px;
+    height: 10vw;
+    max-height: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    margin: 20px;
+    width: 40%;
+    max-width: 400px;
+}
+
+a {
+    text-decoration: none; /*ссылки не подчёркиваются*/
+    color: lightcoral;
+    margin-left: 50px;
+    margin-right: 50px;
+    /*cursor: pointer;*/
+}
+
+    a:visited { /*отображение посещённых ссылок*/
+        text-decoration: none; /*нажатые ссылки не изменяют цвет*/
+    }
+
+    a:hover {
+        color: white;
+    }
+main {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    height: 80vh;
+
+    /*flex-flow: row-reverse nowrap;
+    align-items: center;*/
+}
+.empty_shop_cart {
+    margin: 100px;
+}
+
+.empty_shop_cart_text {
+    color: lightcoral;
+    font-size: 30px;
+}
+
+.goods{
+    width: 60%;
+    overflow-y:scroll;
+}
+.total {
+    width: 35%;
+    height: 250px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.goods, .total {
+    background: rgba(255,255,255,0.13);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.goods_item {
+    padding:1rem;
+    border-bottom: 3px solid #f7a4ab;
+    display: flex;
+}
+.goods_img {
+    height: 200px;
+    width: 133px;
+    object-fit: cover;
+    margin: 0 1rem 1rem 0;
+    border-radius: 1rem;
+}
+.info_box {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1rem
+}
+.upper_info_box, .lower_info_box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items:center;
+}
+.regulate_box {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1rem;
+    width: 100px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    
+}
+.minus_btn, .plus_btn{
+    padding:0 10px;
+    cursor: pointer;
+}
+.goods_quantity {
+    margin:10px 10px;
+}
+.total_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+button {
+    font-family: "Ostrovsky";
+    outline: 0;
+    background: lightcoral;
+    width: 20vw;
+    min-width: 50px;
+    border: 0;
+    border-radius: 1rem;
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    /*-webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;*/
+    cursor: pointer;
+}
+button:hover, button:active, button:focus{
+    background: #ed8d90;
+}
+@media (max-width: 1030px){
+    main {
+        flex-flow: column;
+    }
+    .goods {
+        width: 97%;
+    }
+
+    .total {
+        width: 97%;
+    }
+    button {
+        width: 90vw;
+        min-width: 100px;
+        font-size: 15px;
+    }
+}

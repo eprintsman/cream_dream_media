@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ого вот это да</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "Ostrovsky";
+            background: linear-gradient(pink 10%, lightcoral);
+            
+        }
+        header {
+            background-color: pink;
+            position: sticky;
+            top: 0px;
+            height: 10vw;
+            max-height: 70px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #logo {
+            margin: 20px;
+            width: 40%;
+            max-width: 400px;
+        }
+
+        a {
+            text-decoration: none; /*ссылки не подчёркиваются*/
+            color: lightcoral;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+            a:visited { /*отображение посещённых ссылок*/
+                text-decoration: none; /*нажатые ссылки не изменяют цвет*/
+            }
+
+            a:hover { /* отображение наведения на ссылку*/
+                color: white;
+            }
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #Canvas {
+            background: rgba(255,255,255,0.13);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            
+            width: 80vw;
+            height: 70vh;
+        }
+        #source {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <aside style="float: right">
+            <a id="back_to_main" href="index.html">На главную</a>
+        </aside>
+        <img id="logo" src="header-logo.png" alt="Логотип" width="200" />
+    </header>
+    <main>
+
+        <canvas id="Canvas"> </canvas>
+        <img src="email_icon.png" id="source" />
+
+    </main>
+
+    <script>
+        var image = document.getElementById("source");
+        var canvas = document.querySelector("Canvas");
+        var context = canvas.getContext("2d");
+
+        let drawing = false;
+
+        const isDrawing = () => {
+            if (!drawing) {
+                document.addEventListener("mousemove", draw);
+                reposition(event);
+            } else {
+                document.removeEventListener("mousemove", draw);
+            }
+            drawing = !drawing;
+        };
+
+        let coord = { x: 0, y: 0 };
+
+        document.addEventListener("click", isDrawing);
+
+        resize();
+
+        function resize() {
+            context.canvas.width = window.innerWidth;
+            context.canvas.height = window.innerHeight;
+        }
+        function reposition(event) {
+            coord.x = event.clientX - canvas.offsetLeft + canvas.offsetLeft; /*canvas.clientLeft*/
+            coord.y = event.clientY - canvas.offsetTop + canvas.offsetTop; /*canvas.clientTop*/
+        }
+        function draw(event) {
+            context.beginPath();
+            context.drawImage(image, 0, 0, 512, 512, coord.x, coord.y, 64, 64);
+            context.moveTo(coord.x, coord.y);
+            reposition(event);
+            context.stroke();
+        }
+    </script>
+</body>
+</html>
