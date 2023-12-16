@@ -861,7 +861,7 @@ footer {
     }*/
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
     .div_png_ice {
         width: calc(50vw - 20px);
     }
