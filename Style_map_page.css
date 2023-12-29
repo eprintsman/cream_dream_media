@@ -37,8 +37,8 @@ header {
 a {
     text-decoration: none; /*ссылки не подчёркиваются*/
     color: lightcoral;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
     a:visited { /*отображение посещённых ссылок*/
