@@ -620,6 +620,7 @@ main .cards_container .card:nth-child(n) .cards_box .cards_content a {
     transition: opacity 0.5s;
     font-size: 0;
     -webkit-backface-visibility: hidden;
+    z-index:6;
 }
     .back-to-top:hover {
         opacity: 100%;
