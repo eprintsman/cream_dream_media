@@ -1,11 +1,11 @@
 
-$('.minus_btn').click(function () {
-    $(this).click(minusKindOf($(this).attr('class').slice(-1)));
+$('.minus_btn').on("click touchend",function () {
+    $(this).on("click touchend",minusKindOf($(this).attr('class').slice(-1)));
 });
 
 
-$('.plus_btn').click(function () {
-    $(this).click(plusKindOf($(this).attr('class').slice(-1)));
+$('.plus_btn').on("click touchend",function () {
+    $(this).on("click touchend",plusKindOf($(this).attr('class').slice(-1)));
 });
 
 function minusKindOf(i) {
