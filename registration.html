@@ -52,7 +52,7 @@
         $(".captcha_text").text(rString);
 
         var loginFormOn = true;
-        $('.message a').click(function () {
+        $('.message a').on("click touchend",function () {
             $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
             if (loginFormOn == true) {
                 $('.box').height(450);
@@ -70,7 +70,7 @@
             return result;
         }
 
-        $('#captcha_icon').click(function () {
+        $('#captcha_icon').on("click touchend",function () {
             var rString = captchaGeneration(arr);
             
             $(".captcha_input").text('');
