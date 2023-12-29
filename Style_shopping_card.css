@@ -52,8 +52,8 @@ header {
 a {
     text-decoration: none; /*ссылки не подчёркиваются*/
     color: lightcoral;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     /*cursor: pointer;*/
 }
 
@@ -117,7 +117,7 @@ main {
     flex-flow: column;
     justify-content: space-between;
     width: 100%;
-    padding: 1rem 1rem
+    padding: 0rem 0rem;
 }
 .upper_info_box, .lower_info_box {
     display: flex;
